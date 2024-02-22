@@ -30,7 +30,14 @@ Far more pythonic!
 
 ## Gradient Example
 
-The following code generates this node tree, which produces this image.
+The following code generates this node tree,
+
+![Kaleidoscope example nodetree](https://github.com/JamesPickersgill/python-shader-nodes/blob/master/examples/kaleidoscope%20nodes.jpg)
+
+which produces this image:
+
+![Kaleidoscope example output](https://github.com/JamesPickersgill/python-shader-nodes/blob/master/examples/kaleidoscope%20output.jpg)
+
 
 ```python
 import math
