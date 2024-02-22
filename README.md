@@ -28,7 +28,7 @@ def multiply_r(input_value: FloatSocket, multiply_by: float) -> FloatSocket:
 
 Far more pythonic!
 
-## Gradient Example
+## Kaleidoscope Example
 
 The following code generates this node tree,
 
