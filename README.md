@@ -1,11 +1,12 @@
 # python-shader-nodes
 Helpers to make creating blender shader nodes in python more developer friendly.
 
-This project is in a proof of concept phase, so many features are missing. Happy to add things if people find this tool useful.
+**This project is in a proof of concept phase, so many features are missing**. 
+Happy to add things if people find this tool useful.
 
 
 ## What is this?
-Creating shader node materials with blender's python API is a bit annoying. For simply multiply a number you'd need all this 
+Creating shader node materials with blender's python API is a bit annoying. To simply multiply you'd need all this 
 ```python
 node_group = bpy.data.node_groups.new('Group Name', 'ShaderNodeTree')
 multiply_r = node_group.nodes.new(type="ShaderNodeMath")
