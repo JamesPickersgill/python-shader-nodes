@@ -1,8 +1,10 @@
-from typing import Optional, Callable
-from shader_nodes import FloatSocket, Socket, VectorSocket, ColourSocket, ShaderSocket
 from numbers import Real
-from ._base_node import _BaseNode
+from typing import Optional, Callable
+
 import numpy as np
+
+from shader_nodes import FloatSocket, Socket, VectorSocket, ColourSocket, ShaderSocket
+from ._base_node import _BaseNode
 
 
 class MathsNode(_BaseNode):

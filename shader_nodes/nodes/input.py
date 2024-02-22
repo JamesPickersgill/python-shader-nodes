@@ -1,5 +1,6 @@
 from typing import Dict
-from shader_nodes import FloatSocket, ColourSocket, VectorSocket
+
+from shader_nodes import VectorSocket
 from ._base_node import _BaseNode
 
 

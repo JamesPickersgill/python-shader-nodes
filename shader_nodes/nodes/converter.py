@@ -1,7 +1,9 @@
 from typing import Optional, Tuple
+
+import numpy as np
+
 from shader_nodes import FloatSocket, ColourSocket, VectorSocket, Socket
 from ._base_node import _BaseNode
-import numpy as np
 
 
 class SeparateColour(_BaseNode):
@@ -33,7 +35,7 @@ class SeparateXYZ(_BaseNode):
 
 
 class CombineXYZ(_BaseNode):
-    def blender_method(self, node_tree, x: Optional[FloatSocket], y: Optional[FloatSocket], z: Optional[FloatSocket])\
+    def blender_method(self, node_tree, x: Optional[FloatSocket], y: Optional[FloatSocket], z: Optional[FloatSocket]) \
             -> VectorSocket:
         node = node_tree.nodes.new(type="ShaderNodeCombineXYZ")
 

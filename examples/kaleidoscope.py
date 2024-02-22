@@ -1,17 +1,6 @@
 import math
-
-from shader_nodes import (arctan2,
-                          material,
-                          nodegroup,
-                          ColourSocket,
-                          FloatSocket,
-                          textureCoordinate,
-                          separateXYZ,
-                          pingpong,
-                          sin,
-                          cos,
-                          combineXYZ,
-                          imageTexture)
+from shader_nodes import material, nodegroup, ColourSocket, FloatSocket
+from shader_nodes.nodes import arctan2, textureCoordinate, separateXYZ, pingpong, sin, cos, combineXYZ, imageTexture
 import bpy
 
 

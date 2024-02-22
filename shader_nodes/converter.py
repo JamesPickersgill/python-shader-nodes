@@ -1,11 +1,9 @@
-from dataclasses import dataclass
-from enum import Enum
-from typing import Optional, List, get_type_hints, Callable, Any, Tuple
+import inspect
+from typing import get_type_hints, Callable
+
 import bpy
 
-import inspect
-from abc import ABC, abstractmethod
-from shader_nodes import ColourSocket, FloatSocket, Socket, add, current_node_tree, auto_position
+from shader_nodes import FloatSocket, current_node_tree, auto_position
 
 
 # todo: deal with node.location, maybe see if auto positioning exists
@@ -70,6 +68,7 @@ def nodegroup(func: Callable) -> Callable:
             # todo: wrap these correctly
             return [FloatSocket(socket) for socket in outer_group_node.outputs]
         raise
+
     return wrapper
 
 
@@ -87,7 +86,8 @@ def material(func: Callable) -> Callable:
             func_output = func(*args, **kwargs)
 
             if hasattr(func_output, '__iter__'):
-                assert len(func_output) == 1, f'Can onlt pass one socket to material output. {len(func_output)} sockets were passed.'
+                assert len(
+                    func_output) == 1, f'Can onlt pass one socket to material output. {len(func_output)} sockets were passed.'
                 func_output = func_output[0]
             material_output = node_tree.nodes.new(type='ShaderNodeOutputMaterial')
             node_tree.links.new(func_output.socket, material_output.inputs['Surface'])
@@ -98,6 +98,3 @@ def material(func: Callable) -> Callable:
         return material
 
     return wrapper
-
-
-

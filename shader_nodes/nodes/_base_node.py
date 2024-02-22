@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 from shader_nodes import current_node_tree
 
 

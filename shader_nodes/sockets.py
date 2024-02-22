@@ -3,19 +3,19 @@ class _Socket:
         self.socket = socket
 
     def __add__(self, other):
-        from shader_nodes import add
+        from shader_nodes.nodes import add
         return add(self, other)
 
     def __mul__(self, other):
-        from shader_nodes import multiply
+        from shader_nodes.nodes import multiply
         return multiply(self, other)
 
     def __pow__(self, _power, modulo=None):
-        from shader_nodes import power
+        from shader_nodes.nodes import power
         return power(self, _power)
 
     def __sub__(self, other):
-        from shader_nodes import subtract
+        from shader_nodes.nodes import subtract
         return subtract(self, other)
 
 

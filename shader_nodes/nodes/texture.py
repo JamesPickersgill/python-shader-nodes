@@ -1,7 +1,9 @@
 from typing import Dict, Optional
+
+import bpy
+
 from shader_nodes import FloatSocket, ColourSocket, VectorSocket, Socket
 from ._base_node import _BaseNode
-import bpy
 
 
 # todo: add input sockets to this
@@ -19,7 +21,8 @@ class VoronoiTexture(_BaseNode):
 
 
 class ImageTexture(_BaseNode):
-    def blender_method(self, node_tree, vector: Optional[VectorSocket] = None, image_path: Optional[str] = None) -> Dict[str, Socket]:
+    def blender_method(self, node_tree, vector: Optional[VectorSocket] = None, image_path: Optional[str] = None) -> \
+    Dict[str, Socket]:
         node = node_tree.nodes.new(type="ShaderNodeTexImage")
 
         if image_path is not None:
