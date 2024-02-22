@@ -6,7 +6,6 @@ import bpy
 from shader_nodes import FloatSocket, current_node_tree, auto_position
 
 
-# todo: deal with node.location, maybe see if auto positioning exists
 # todo: allow non-socket arguments, i.e. colour step input for colour ramp
 def nodegroup(func: Callable) -> Callable:
     def wrapper(*args, **kwargs):
@@ -86,8 +85,8 @@ def material(func: Callable) -> Callable:
             func_output = func(*args, **kwargs)
 
             if hasattr(func_output, '__iter__'):
-                assert len(
-                    func_output) == 1, f'Can onlt pass one socket to material output. {len(func_output)} sockets were passed.'
+                assert len(func_output) == 1, \
+                    f'Can onlt pass one socket to material output. {len(func_output)} sockets were passed.'
                 func_output = func_output[0]
             material_output = node_tree.nodes.new(type='ShaderNodeOutputMaterial')
             node_tree.links.new(func_output.socket, material_output.inputs['Surface'])
