@@ -84,8 +84,7 @@ if __name__ == '__main__':
 ```
 
 ## Installation
-1. Clone the repo with `gh repo clone JamesPickersgill/python-shader-nodes`
-2. pip install the shader_nodes module, i.e. `pip install ~/python-shader-nodes/shader-nodes`
+Run `pip install git+https://github.com/JamesPickersgill/python-shader-nodes`
 
 
 ## Planned Features
